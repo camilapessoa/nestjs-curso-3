@@ -17,6 +17,7 @@ import { PostgresConfigService } from './config/postgres.config.service';
       useClass: PostgresConfigService,
       inject: [PostgresConfigService],
     }),
+
   ],
 })
 export class AppModule { }
