@@ -5,7 +5,9 @@ import {
   UpdateDateColumn,
   DeleteDateColumn,
   PrimaryGeneratedColumn,
+  ManyToOne,
 } from 'typeorm';
+import { UsuarioEntity } from './usuario.entity';
 
 export enum status {
   cancel = 'cancelado',
@@ -32,4 +34,9 @@ export class PedidoEntity {
 
   @DeleteDateColumn({ name: 'deleted_at' })
   deletedAt: string;
+
+  @ManyToOne(() => UsuarioEntity, (usuario) => usuario.pedidos)
+  usuario: UsuarioEntity
 }
+
+//note que os erros sumiram
